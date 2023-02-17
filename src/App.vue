@@ -17,11 +17,10 @@
           <ChevronRight fillColor="#FFFFFF" :size="30" class="" />
         </button>
       </div>
-      <router-link
+      <button
         @click="openMenu = !openMenu"
         :class="openMenu ? 'bg-[#282828]' : 'bg-black'"
         class="bg-black hover:bg-[#282828] rounded-full p-0.5 mr-8 mt-0.5 cursor-pointer"
-        to="/profile"
       >
         <div class="absolute items-center">
           <img
@@ -34,7 +33,7 @@
         <div class="text-white text-[14px] ml-8 mr-1 font-semibold">
           Dovran Ovetdiyev
         </div>
-      </router-link>
+      </button>
       <div
         v-if="openMenu"
         class="fixed w-[190px] bg-[#282828] shadow-2xl z-50 rounded-sm top-[52px] right-[35px] p-1"
@@ -82,24 +81,48 @@
           />
         </router-link>
         <div class="py-3.5">
-          <MenuItem
-            class="ml-[1px]"
-            :iconSize="23"
-            name="Create Playlist"
-            iconString="playlist"
-            pageUrl="/playlist"
-          />
-          <MenuItem
-            class="ml-[1px]"
-            :iconSize="23"
-            name="Liked songs"
-            iconString="liked"
-            pageUrl="/liked songs"
-          />
+          <router-link to="playlist">
+            <MenuItem
+              class="ml-[1px]"
+              :iconSize="23"
+              name="Create Playlist"
+              iconString="playlist"
+              pageUrl="/playlist"
+            />
+          </router-link>
+          <router-link to="liked songs">
+            <MenuItem
+              class="ml-[1px]"
+              :iconSize="23"
+              name="Liked songs"
+              iconString="liked"
+              pageUrl="/liked songs"
+            />
+          </router-link>
         </div>
+        <div class="border-b border-b-gray-700"></div>
+        <ul>
+          <li
+            class="font-semibold text-[13px] mt-3 text-gray-300 hover:text-white"
+          >
+            My playlist #1
+          </li>
+          <li
+            class="font-semibold text-[13px] mt-3 text-gray-300 hover:text-white"
+          >
+            My playlist #2
+          </li>
+        </ul>
       </div>
     </div>
     <!-- <router-view></router-view> -->
+  </div>
+  <div
+    class="fixed right-0 top-0 w-[calc(100%-240px)] overflow-auto h-full bg-gradient-to-b from-[#1C1C1C] to-black"
+  >
+    <div class="mt-[70px]"></div>
+    <router-view></router-view>
+    <div class="mb-[100px]"></div>
   </div>
 </template>
 

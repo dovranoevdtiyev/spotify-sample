@@ -12,7 +12,7 @@ const router = createRouter({
     },
     {
       path:'/profile',
-      name:'profile',
+      name:'rofile',
       component:()=>import('../views/Profile.vue')
     }
     // {
