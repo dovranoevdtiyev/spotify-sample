@@ -12,8 +12,13 @@ const router = createRouter({
     },
     {
       path:'/profile',
-      name:'rofile',
+      name:'profile',
       component:()=>import('../views/Profile.vue')
+    },
+    {
+      path:'/search',
+      name:'Searchpage',
+      component:()=>import('../views/Searchpage.vue')
     }
     // {
     //   path: '/about',
