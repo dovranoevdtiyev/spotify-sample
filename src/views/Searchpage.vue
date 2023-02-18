@@ -4,12 +4,21 @@
       type="button"
       class="text-white text-2xl font-semibold hover:underline cursor-pointer"
     >
-      Recently played
+      Browse all
     </button>
     <div class="py-1.5"></div>
     <div class="flex items-center">
-      <Categoryselect />
+      <Categoryselect
+        category="Podcasts"
+        image="https://i1.sndcdn.com/artworks-RbVrYfaSxarSDjCd-Isx61w-t500x500.jpg"
+      />
+      <Categoryselect
+        category="Made for you"
+        image="https://davidguetta.com/wp-content/uploads/2021/05/ImGood_Blue-1.jpg"
+      />
     </div>
   </div>
 </template>
-<script setup></script>
+<script setup>
+import Categoryselect from "../components/Categoryselect.vue";
+</script>
