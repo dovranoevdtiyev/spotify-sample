@@ -43,6 +43,7 @@
         </div>
       </div>
     </div>
+    <!-- song row -->
     <div class="mt-6"></div>
     <div class="flex items-center justify-between px-5 pt-2">
       <div class="flex items-center justify-between text-gray-400">
@@ -52,12 +53,12 @@
       <div>
         <ClockTimeThreeOutline fillColor="#FFFFFF" :size="18" />
       </div>
-      <div class="border-b border-b-[#2A2A2A] mt-2"></div>
-      <div class="mb-4"></div>
-      <ul class="w-full" v-for="(track, index) in artist.tracks" :key="track">
-        <SongRow :artist="artist" :track="track" :index="++index" />
-      </ul>
     </div>
+    <div class="border-b border-b-[#eeecec] mt-2"></div>
+    <div class="mb-4"></div>
+    <ul class="w-full" v-for="(track, index) in artist.tracks" :key="track">
+      <SongRow :artist="artist" :track="track" :index="++index" />
+    </ul>
   </div>
 </template>
 <script setup>

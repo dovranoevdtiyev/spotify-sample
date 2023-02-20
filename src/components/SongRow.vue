@@ -20,10 +20,22 @@ const { artist, track, index } = toRefs(props);
     @mouseleave="isHover = false"
   >
     <div class="flex items-center w-full py-1.5">
-      <div class="w-[40px] ml-[14px] mr-[6px] cursor-pointer">
+      <div v-if="isHover" class="w-[40px] ml-[14px] mr-[6px] cursor-pointer">
         <Play v-if="true" fillColor="#FFFFFF" :size="25" />
         <Pause v-else fillColor="#FFFFFF" :size="25" />
       </div>
+      <div v-else class="text-white font-semibold w-[40px] ml-5">
+        <span>{{ index }}</span>
+      </div>
+      <div>
+        <div class="text-white font-semibold">{{ track.name }}</div>
+        <div class="text-sm font-semibold text-gray-400">{{ artist.name }}</div>
+      </div>
+    </div>
+    <div class="flex items-center">
+      <button v-if="isHover" type="button">
+        <Heart fillColor="#18D760" :size="22" />
+      </button>
     </div>
   </li>
 </template>
