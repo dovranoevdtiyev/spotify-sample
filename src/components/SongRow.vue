@@ -12,6 +12,15 @@ const props = defineProps({
   track: Object,
 });
 const { artist, track, index } = toRefs(props);
+onMounted(() => {
+  const audio = new Audio(track.value.path);
+  audio.addEventListener("loadedmetadata", function () {
+    const duration = audio.duration;
+    const minutes = Math.floor(duration / 60);
+    const seconds = Math.floor(duration % 60);
+    isTrackTime.value = minutes + ":" + seconds.toString().padStart(2, "0");
+  });
+});
 </script>
 <template>
   <li
@@ -36,6 +45,9 @@ const { artist, track, index } = toRefs(props);
       <button v-if="isHover" type="button">
         <Heart fillColor="#18D760" :size="22" />
       </button>
+      <div v-if="isTrackTime" class="text-xs mx-5 text-gray-400">
+        {{ isTrackTime }}
+      </div>
     </div>
   </li>
 </template>
