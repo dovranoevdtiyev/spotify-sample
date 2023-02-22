@@ -124,6 +124,7 @@
     <router-view></router-view>
     <div class="mb-[100px]"></div>
   </div>
+  <MusicPlayer v-if="currentTrack" />
 </template>
 
 <script setup>
@@ -132,6 +133,7 @@ import ChevronRight from "vue-material-design-icons/ChevronRight.vue";
 import ChevronDown from "vue-material-design-icons/ChevronDown.vue";
 import ChevronUp from "vue-material-design-icons/ChevronUp.vue";
 import MenuItem from "./components/MenuItem.vue";
-import { ref } from "vue";
+import { ref, onMounted } from "vue";
+
 let openMenu = ref(false);
 </script>
