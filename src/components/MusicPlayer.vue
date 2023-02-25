@@ -86,4 +86,8 @@ watch(
   }
 );
 </script>
-<template><h1>MusicPlayer</h1></template>
+<template>
+  <h1>MusicPlayer</h1>
+  <heart></heart>
+  <PictureInPictureBottomRight></PictureInPictureBottomRight>
+</template>
