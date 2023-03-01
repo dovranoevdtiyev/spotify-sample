@@ -87,7 +87,8 @@ watch(
 );
 </script>
 <template>
-  <h1>MusicPlayer</h1>
-  <heart></heart>
-  <PictureInPictureBottomRight></PictureInPictureBottomRight>
+  <div
+    id="MusicPlayer"
+    class="fixed flex items-center justify-between bottom-0 w-full z-50 h-[90px] bg-[#181818] border-t border-t-[#272727]"
+  ></div>
 </template>
